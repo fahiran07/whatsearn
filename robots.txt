@@ -1,0 +1,9 @@
+User-agent: MediaPartner-Google
+Disallow:
+
+User-agent: *
+Disallow: /search
+Allow: /
+
+# Sitemap location for Media Partner Google
+Sitemap: https://fahiran07.github.io/whatsearn/sitemap.xml
