@@ -6,11 +6,19 @@ body {
 	background-color: #f4f4f9;
 	color: #333;
 }
+
+/* Main Content */
 main {
-	width: 70%;
+	width: 90%;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
+* {
+	box-sizing: border-box;
+}
+
+/* Loader */
 .loader {
 	position: fixed;
 	top: 0;
@@ -42,6 +50,7 @@ main {
 	}
 }
 
+/* Header */
 header {
 	background: #3498db;
 	color: #fff;
@@ -49,15 +58,19 @@ header {
 	text-align: center;
 }
 
+/* App Card */
 .app-card {
-	margin: 20px;
+	margin: 20px 0;
 	padding: 20px;
 	border-radius: 10px;
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap; /* Mobile ke liye flex wrap */
 	opacity: 0;
 	transform: translateY(20px);
 	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	background: #fff;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .app-card.visible {
@@ -72,6 +85,11 @@ header {
 	margin-right: 20px;
 }
 
+/* App Content */
+.app-content {
+	flex: 1;
+}
+
 .app-content h2 {
 	margin: 0;
 	font-size: 24px;
@@ -84,6 +102,7 @@ header {
 	line-height: 1.6;
 }
 
+/* Screenshot */
 .screenshot img {
 	width: 100%;
 	max-width: 300px;
@@ -91,6 +110,7 @@ header {
 	margin-top: 10px;
 }
 
+/* Footer */
 footer {
 	background: #3498db;
 	color: #fff;
@@ -99,4 +119,97 @@ footer {
 	position: relative;
 	bottom: 0;
 	width: 100%;
+}
+
+/* Telegram Button */
+#telegram-telegram {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+}
+
+#telegram-telegram a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #0088cc;
+	display: flex;
+	align-items: center;
+}
+
+#telegram-telegram img {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+/* Button Styles */
+.app-content a {
+	display: inline-block;
+	padding: 12px 24px;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	background: linear-gradient(135deg, #007bff, #0056b3);
+	border-radius: 8px;
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+	text-align: center;
+}
+
+.app-content a:hover {
+	background: linear-gradient(135deg, #0056b3, #004080);
+	box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+	transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	header {
+		padding: 15px;
+	}
+
+	.app-card {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.app-icon img {
+		margin-bottom: 10px;
+	}
+
+	.app-content h2 {
+		font-size: 20px;
+	}
+
+	.app-content p {
+		font-size: 14px;
+	}
+
+	.app-content a {
+		width: 60%;
+		text-align: center;
+		border-radius: 4rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.app-content h2 {
+		font-size: 18px;
+	}
+
+	.app-content p {
+		font-size: 14px;
+	}
+
+	.app-content a {
+		width: 60%;
+	}
+
+	.screenshot img {
+		max-width: 100%;
+	}
 }
